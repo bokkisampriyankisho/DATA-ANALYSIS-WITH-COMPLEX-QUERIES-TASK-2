@@ -13,14 +13,14 @@ CREATE TABLE Employees (
 );
 
 INSERT INTO Employees (emp_id, emp_name, department, salary, hire_date) VALUES
-(1, 'Janu', 'IT', 70000, '2020-01-15'),
-(2, 'Hema', 'HR', 50000, '2019-03-20'),
-(3, 'Harshini', 'IT', 60000, '2021-07-10'),
-(4, 'Charmi', 'Finance', 80000, '2018-11-01'),
-(5, 'Siri', 'IT', 75000, '2017-05-22'),
-(6, 'Trisha', 'HR', 55000, '2020-09-05'),
-(7, 'Pallavi', 'Finance', 90000, '2016-04-17'),
-(8, 'Sindhu', 'IT', 65000, '2019-06-12');
+(1, 'Janu', 'IT', 70000, '2023-01-15'),
+(2, 'Hema', 'HR', 50000, '2022-03-20'),
+(3, 'Harshini', 'IT', 60000, '2024-07-10'),
+(4, 'Charmi', 'Finance', 80000, '2021-11-01'),
+(5, 'Siri', 'IT', 75000, '2019-05-22'),
+(6, 'Trisha', 'HR', 55000, '2023-09-05'),
+(7, 'Pallavi', 'Finance', 90000, '2018-04-17'),
+(8, 'Sindhu', 'IT', 65000, '2020-06-12');
 
 
 |Emp id  | Emp name   | Dept    |  Salary   | Hire date   |
