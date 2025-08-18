@@ -33,7 +33,6 @@ INSERT INTO Employees (emp_id, emp_name, department, salary, hire_date) VALUES
 | 6      | Trisha     | HR      | 55000     | 2023-09-05  |
 | 7      | Pallavi    | Finance | 90000     | 2018-04-17  |     
 | 8      | Sindhu     | IT      | 65000     | 2020-06-10  |
-|--------|------------|---------|-----------|-------------|
 
 
 TABLE-2 : PROJECTS TABLE
@@ -57,3 +56,15 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 (106, 'Training', 6, 90),
 (107, 'Audit', 7, 160),
 (108, 'Cyber Sec', 8, 130);
+
+|Priject id | Project name  | Emp id  | Hours worked|
+|-----------|---------------|---------|-------------|
+| 101       | Website Dev   | 1       | 120         |
+| 102       | Recruitment   | 2       | 80          |
+| 103       | Cloud Setup   | 3       | 150         |
+| 104       | Budgeting     | 4       | 100         |
+| 105       | AI Research   | 5       | 200         |
+| 106       | Training      | 6       | 90          |
+| 107       | Audit         | 7       | 160         |
+| 108       | Cyber Sec     | 8       | 130         |
+
