@@ -9,6 +9,19 @@ CREATE TABLE Employees (
     salary DECIMAL(10,2),
     hire_date DATE
 );
+
+INSERT INTO Employees (emp_id, emp_name, department, salary, hire_date) VALUES
+(1, 'John', 'IT', 70000, '2020-01-15'),
+(2, 'Sarah', 'HR', 50000, '2019-03-20'),
+(3, 'Mike', 'IT', 60000, '2021-07-10'),
+(4, 'Emma', 'Finance', 80000, '2018-11-01'),
+(5, 'David', 'IT', 75000, '2017-05-22'),
+(6, 'Sophia', 'HR', 55000, '2020-09-05'),
+(7, 'James', 'Finance', 90000, '2016-04-17'),
+(8, 'Olivia', 'IT', 65000, '2019-06-12');
+
+
+
 QUERIE FOR CREATING PROJECTS TABLE
 CREATE TABLE Projects (
     project_id INT PRIMARY KEY,
@@ -18,4 +31,13 @@ CREATE TABLE Projects (
     FOREIGN KEY (emp_id) REFERENCES Employees(emp_id)
 );
 
-
+-- Insert Projects
+INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
+(101, 'Website Dev', 1, 120),
+(102, 'Recruitment', 2, 80),
+(103, 'Cloud Setup', 3, 150),
+(104, 'Budgeting', 4, 100),
+(105, 'AI Research', 5, 200),
+(106, 'Training', 6, 90),
+(107, 'Audit', 7, 160),
+(108, 'Cyber Sec', 8, 130);
