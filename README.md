@@ -68,3 +68,23 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 | 107       | Audit         | 7       | 160         |
 | 108       | Cyber Sec     | 8       | 130         |
 
+
+WINDOW FUNCTION 
+
+Q:SELECT 
+    emp_name,
+    department,
+    salary,
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank
+FROM Employees;
+
+
+
+
+
+
+
+
+
+
+
