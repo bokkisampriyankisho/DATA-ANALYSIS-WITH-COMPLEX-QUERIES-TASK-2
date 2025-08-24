@@ -5,14 +5,14 @@ TABLE-1 : EMPLOYEES TABLE
 QUERIE FOR CREATING AND INSERTING VALUES EMPLOYEES TABLE 1:
 
 CREATE TABLE Employees (
-    emp_id INT PRIMARY KEY,
-    emp_name VARCHAR(50),
-    department VARCHAR(50),
-    salary DECIMAL(10,2),
-    hire_date DATE
+    Emp id INT PRIMARY KEY,
+    Emp name VARCHAR(50),
+    Dept VARCHAR(50),
+    Salary DECIMAL(10,2),
+    Hire date DATE
 );
 
-INSERT INTO Employees (emp_id, emp_name, department, salary, hire_date) VALUES
+INSERT INTO Employees (Emp id, Emp name, Dept, Salary, Hire date) VALUES
 (1, 'Janu', 'IT', 70000, '2023-01-15'),
 (2, 'Hema', 'HR', 50000, '2022-03-20'),
 (3, 'Harshini', 'IT', 60000, '2024-07-10'),
@@ -40,14 +40,14 @@ TABLE-2 : PROJECTS TABLE
 QUERIE FOR CREATING AND INSERTING VALUES PROJECTS TABLE 2:
 
 CREATE TABLE Projects (
-    project_id INT PRIMARY KEY,
-    project_name VARCHAR(100),
-    emp_id INT,
-    hours_worked INT,
-    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id)
+    Project id INT PRIMARY KEY,
+    Project name VARCHAR(100),
+    Emp id INT,
+    Hours worked INT,
+    FOREIGN KEY (Emp id) REFERENCES Employees(Emp id)
 );
 
-INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
+INSERT INTO Projects (Project id, Project name, Emp id, Hours worked) VALUES
 (101, 'Website Dev', 1, 120),
 (102, 'Recruitment', 2, 80),
 (103, 'Cloud Setup', 3, 150),
@@ -70,14 +70,16 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 
 COMPLEX QUERIES & OUTPUTS :
 
-WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
+1.WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
 
-Q: SELECT 
-    emp_name,
-    department,
-    salary,
-    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS Dept_rank
-FROM Employees;
+QUERY :
+
+SELECT 
+    Emp_name,
+    Dept,
+    Salary,
+    RANK() OVER (PARTITION BY Dept ORDER BY Salary DESC) AS Dept_rank
+FROM Employees;  
 
 OUTPUT:
 
@@ -94,19 +96,21 @@ OUTPUT:
 
 2.CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
 
-Q: WITH DeptAvg AS (
-    SELECT Dept, AVG(Salary) AS Avg_salary
+QUERY :
+
+WITH DeptAvg AS (
+    SELECT Dept, AVG(Salary) AS Avg salary
     FROM Employees
     GROUP BY Dept
 )
-SELECT e.Emp_name, e.Dept, e.Salary, d.Avg_salary
+SELECT e.Emp_name, e.Dept, e.Salary, d.Avg salary
 FROM Employees e
 JOIN DeptAvg d ON e.Dept = d.Dept
-WHERE e.Salary > d.Avg_salary;
+WHERE e.Salary > d.Avg salary;
 
 OUTPUT :
 
-|Emp name  |Dept    |Salary   |Avg_salary |
+|Emp name  |Dept    |Salary   |Avg salary |
 |----------|--------|---------|-----------|
 | Siri     | IT     | 75000   | 67500     |
 | Trisha   | HR     | 55000   | 52500     |
@@ -114,12 +118,23 @@ OUTPUT :
 
 3.SUBQUERY-EMPLOYEE WHO WORKED MORE THAN AVG HOURS
 
-Q: SELECT emp_name, hours_worked
+QUERY :
+
+SELECT Emp name, Hours worked
 FROM Projects p
-JOIN Employees e ON p.emp_id = e.emp_id
-WHERE hours_worked > (
-    SELECT AVG(hours_worked) FROM Projects
+JOIN Employees e ON p.Emp id = e.Emp id
+WHERE Hours worked > (
+    SELECT AVG(hours worked) FROM Projects
 );
+
+OUTPUT :
+
+|Emp name  | Hours worked |
+|----------|--------------|
+| Harshini | 150          |
+| Siri     | 200          | 
+| Pallavi  | 160          |
+| Sindhu   | 130          |
 
 
 
