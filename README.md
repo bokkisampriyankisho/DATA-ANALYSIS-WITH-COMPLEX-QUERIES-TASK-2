@@ -68,11 +68,11 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 | 107       | Audit         | 7       | 160         |
 | 108       | Cyber Sec     | 8       | 130         |
 
-COMPLEX QUERIES & OUTPUTS
+COMPLEX QUERIES & OUTPUTS :
 
 WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
 
-Q:SELECT 
+Q: SELECT 
     emp_name,
     department,
     salary,
@@ -92,19 +92,29 @@ OUTPUT:
 | Pallavi   | Finance| 90000   | 1         |
 | Charmi    | Finance| 80000   | 2         |
 
-CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
+2.CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
 
-Q:WITH DeptAvg AS (
-    SELECT department, AVG(salary) AS avg_salary
+Q: WITH DeptAvg AS (
+    SELECT Dept, AVG(Salary) AS Avg_salary
     FROM Employees
-    GROUP BY department
+    GROUP BY Dept
 )
-SELECT e.emp_name, e.department, e.salary, d.avg_salary
+SELECT e.Emp_name, e.Dept, e.Salary, d.Avg_salary
 FROM Employees e
-JOIN DeptAvg d ON e.department = d.department
-WHERE e.salary > d.avg_salary;
+JOIN DeptAvg d ON e.Dept = d.Dept
+WHERE e.Salary > d.Avg_salary;
 
+OUTPUT :
 
+|Emp name  |Dept    |Salary   |Avg_salary |
+|----------|--------|---------|-----------|
+| Siri     | IT     | 75000   | 67500     |
+| Trisha   | HR     | 55000   | 52500     |
+| Pallavi  | Finance| 90000   | 85000     |
+
+3.SUBQUERY-EMPLOYEE WHO WORKED MORE THAN AVG HOURS
+
+Q: 
 
 
 
