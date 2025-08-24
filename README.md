@@ -94,7 +94,21 @@ OUTPUT:
 
 CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
 
-Q:
+Q:WITH DeptAvg AS (
+    SELECT department, AVG(salary) AS avg_salary
+    FROM Employees
+    GROUP BY department
+)
+SELECT e.emp_name, e.department, e.salary, d.avg_salary
+FROM Employees e
+JOIN DeptAvg d ON e.department = d.department
+WHERE e.salary > d.avg_salary;
+
+
+
+
+
+
 
 
 
