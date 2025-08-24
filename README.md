@@ -57,7 +57,7 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 (107, 'Audit', 7, 160),
 (108, 'Cyber Sec', 8, 130);
 
-|Priject id | Project name  | Emp id  | Hours worked|
+|Project id | Project name  | Emp id  | Hours worked|
 |-----------|---------------|---------|-------------|
 | 101       | Website Dev   | 1       | 120         |
 | 102       | Recruitment   | 2       | 80          |
@@ -68,15 +68,33 @@ INSERT INTO Projects (project_id, project_name, emp_id, hours_worked) VALUES
 | 107       | Audit         | 7       | 160         |
 | 108       | Cyber Sec     | 8       | 130         |
 
+COMPLEX QUERIES & OUTPUTS
 
-WINDOW FUNCTION 
+WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
 
 Q:SELECT 
     emp_name,
     department,
     salary,
-    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS Dept_rank
 FROM Employees;
+
+OUTPUT:
+
+|Emp name   | Dept   | Salary  | Dept_rank |
+|-----------|--------|---------|-----------|
+| Siri      | IT     | 75000   | 1         |
+| Janu      | IT     | 70000   | 2         |
+| Sindhu    | IT     | 65000   | 3         |
+| Harshini  | IT     | 60000   | 4         |
+| Trisha    | HR     | 55000   | 1         |
+| Hema      | HR     | 50000   | 2         |
+| Pallavi   | Finance| 90000   | 1         |
+| Charmi    | Finance| 80000   | 2         |
+
+CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
+
+Q:
 
 
 
