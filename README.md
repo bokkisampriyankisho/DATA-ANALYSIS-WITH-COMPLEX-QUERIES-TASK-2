@@ -114,7 +114,12 @@ OUTPUT :
 
 3.SUBQUERY-EMPLOYEE WHO WORKED MORE THAN AVG HOURS
 
-Q: 
+Q: SELECT emp_name, hours_worked
+FROM Projects p
+JOIN Employees e ON p.emp_id = e.emp_id
+WHERE hours_worked > (
+    SELECT AVG(hours_worked) FROM Projects
+);
 
 
 
