@@ -1,6 +1,6 @@
 # DATA-ANALYSIS-WITH-COMPLEX-QUERIES-TASK-2
 
-TABLE-1 : EMPLOYEES TABLE
+1️⃣TABLE-1 : EMPLOYEES TABLE
 
 QUERIE FOR CREATING AND INSERTING VALUES EMPLOYEES TABLE 1:
 
@@ -35,7 +35,7 @@ INSERT INTO Employees (Emp id, Emp name, Dept, Salary, Hire date) VALUES
 | 8      | Sindhu     | IT      | 65000     | 2020-06-10  |
 
 
-TABLE-2 : PROJECTS TABLE
+2️⃣TABLE-2 : PROJECTS TABLE
 
 QUERIE FOR CREATING AND INSERTING VALUES PROJECTS TABLE 2:
 
@@ -70,7 +70,7 @@ INSERT INTO Projects (Project id, Project name, Emp id, Hours worked) VALUES
 
 COMPLEX QUERIES & OUTPUTS :
 
-1.WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
+🟧1.WINDOW FUNCTION-SALARY RANK WITHIN DEPARTMENT:
 
 QUERY :
 
@@ -81,7 +81,7 @@ SELECT
     RANK() OVER (PARTITION BY Dept ORDER BY Salary DESC) AS Dept_rank
 FROM Employees;  
 
-OUTPUT:
+🟢OUTPUT:
 
 |Emp name   | Dept   | Salary  | Dept_rank |
 |-----------|--------|---------|-----------|
@@ -94,7 +94,7 @@ OUTPUT:
 | Pallavi   | Finance| 90000   | 1         |
 | Charmi    | Finance| 80000   | 2         |
 
-2.CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
+🟦2.CTE(COMMON TABLE EXPRESSIONS)-AVERAGE SALARY PER DEPARTMENT
 
 QUERY :
 
@@ -108,7 +108,7 @@ FROM Employees e
 JOIN DeptAvg d ON e.Dept = d.Dept
 WHERE e.Salary > d.Avg salary;
 
-OUTPUT :
+🟢OUTPUT :
 
 |Emp name  |Dept    |Salary   |Avg salary |
 |----------|--------|---------|-----------|
@@ -116,7 +116,7 @@ OUTPUT :
 | Trisha   | HR     | 55000   | 52500     |
 | Pallavi  | Finance| 90000   | 85000     |
 
-3.SUBQUERY-EMPLOYEE WHO WORKED MORE THAN AVG HOURS
+🟪3.SUBQUERY-EMPLOYEE WHO WORKED MORE THAN AVG HOURS
 
 QUERY :
 
@@ -127,7 +127,7 @@ WHERE Hours worked > (
     SELECT AVG(hours worked) FROM Projects
 );
 
-OUTPUT :
+🟢OUTPUT :
 
 |Emp name  | Hours worked |
 |----------|--------------|
